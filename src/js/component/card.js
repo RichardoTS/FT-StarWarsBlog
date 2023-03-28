@@ -1,23 +1,25 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import PropType from 'prop-types'
 
-const Card = () => {
+const Card = (props) => {
     return (
             <div className="card" style="width: 18rem;">
-                <img src={url} className="card-img-top" />
+                <img src={props.url} className="card-img-top" />
                     <div className="card-body">
-                        <h5 className="card-title">{title}</h5>
-                        <p className="card-text">{description}</p>
-                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                        <h5 className="card-title">{props.title}</h5>
+                        <p className="card-text">{props.description}</p>
+                        <a href={props.buttonUrl} className="btn btn-primary">{props.buttonLabel}</a>
                     </div>
             </div>
     )
 }
 
 Card.propTypes = {
-    title: PropTypes.string,
-    url: PropTypes.string,
-    description: PropTypes.string,
+    title: PropType.string,
+    url: PropType.string,
+    description: PropType.string,
+    buttonUrl: PropType.string,
+    buttonLabel: PropType.string
 };
 
 export default Card
