@@ -1,9 +1,10 @@
 import React from 'react'
 
 
-export function Planets() {
+function Planets() {
   return (
     <div>planets</div>
   )
 }
 
+export default Planets
