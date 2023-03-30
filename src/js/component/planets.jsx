@@ -3,7 +3,9 @@ import React from 'react'
 
 function Planets() {
   return (
-    <div>planets</div>
+    <div className="text-center mt-5">
+      Planets
+    </div>
   )
 }
 
