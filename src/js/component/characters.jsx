@@ -26,6 +26,7 @@ const Characters = () => {
       results.forEach(async ({ origin: { name, url } }, i) => {
         /* console.log("consultando " + name);
         console.log(url); */
+        console.log("consultando" + homeworld);
         if (url) {
           const resp = await fetch(url);
           const info = await resp.json();
@@ -62,11 +63,11 @@ const Characters = () => {
       <div className="row">
         {
           !!characters &&
-          characters.results.map(({ id, name, status, image, origin, url }) => {
+          characters.results.map(({ uid, name, url, image}) => {
             return (
-              <div className="col-md-6" key={id}>
-                <Card name={name} status={status} image={image} origin={origin} url={url} />
-              </div>
+                <div className="col-md-6" key={uid}>
+                  <Card name={name} url={url}/>
+                </div>
             )
           })
         }
@@ -74,12 +75,12 @@ const Characters = () => {
       <div className="row">
         <div className="col-md-12 d-flex justify-content-between py-3">
           <button className={"btn btn-primary btn-sm " + (characters?.previous ? "" : "disabled")}
-            onClick={() => getCharacters(characters?.info?.previous)}
+            onClick={() => getCharacters(characters?.previous)}
           >
             Prev
           </button>
           <button className={"btn btn-primary btn-sm " + (characters?.next ? "" : "disabled")}
-            onClick={() => getCharacters(characters?.info?.next)}
+            onClick={() => getCharacters(characters?.next)}
           >
             Next
           </button>

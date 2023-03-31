@@ -74,12 +74,12 @@ const Characters = () => {
       <div className="row">
         <div className="col-md-12 d-flex justify-content-between py-3">
           <button className={"btn btn-primary btn-sm " + (characters?.previous ? "" : "disabled")}
-            onClick={() => getCharacters(characters?.info?.previous)}
+            onClick={() => getCharacters(characters?.previous)}
           >
             Prev
           </button>
           <button className={"btn btn-primary btn-sm " + (characters?.next ? "" : "disabled")}
-            onClick={() => getCharacters(characters?.info?.next)}
+            onClick={() => getCharacters(characters?.next)}
           >
             Next
           </button>
