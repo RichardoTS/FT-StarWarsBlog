@@ -3,8 +3,7 @@ import React, { Component } from "react";
 export const Footer = () => (
 	<footer className="footer mt-auto py-3 text-center">
 		<p>
-			Made with copying and pasting by{" sdfg "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
+			Hello there ...
 		</p>
 	</footer>
 );
