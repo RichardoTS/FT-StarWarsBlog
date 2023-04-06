@@ -16,11 +16,7 @@ export const Navbar = () => {
 			<Link to="/vehicles">
 				<span className="navbar-brand mb-3 h1"><i class="fa-brands fa-galactic-republic"> Vehicles</i></span>
 			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
-			</div>
+			
 		</nav>
 	);
 };
