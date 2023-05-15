@@ -1,5 +1,4 @@
 import React from "react";
-import doggio from "../../img/aYVEPgx_700b.jpg";
 import "../../styles/home.css";
 
 export const Home = () => (
@@ -12,7 +11,7 @@ export const Home = () => (
 
 	<div className="text-center mt-5">
 		<p>
-			<img src={doggio} />
+			<h1>May the force be with you ... Always.</h1>
 		</p>
 	</div>
 );

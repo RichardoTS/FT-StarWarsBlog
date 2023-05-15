@@ -24,12 +24,9 @@ const Characters = () => {
       const { results } = data;
 
       results.forEach(async ({ origin: { name, url } }, i) => {
-        /* console.log("consultando " + name);
-        console.log(url); */
         if (url) {
           const resp = await fetch(url);
           const info = await resp.json();
-          //console.log(info);
           data.results[i].origin.info = info;
         }
       });

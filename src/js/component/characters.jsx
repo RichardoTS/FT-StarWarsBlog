@@ -67,6 +67,8 @@ const Characters = () => {
             return (
                 <div className="col-md-6" key={uid}>
                   <Card name={name} url={url}/>
+                  <p>{name}</p>
+                  <p>{url}</p>
                 </div>
             )
           })

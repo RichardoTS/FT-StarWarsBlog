@@ -1,22 +1,31 @@
 import React from 'react'
 
-const Card = ({ name, image, url }) => {
+const Card = (props) => {
+    const getImg = name => {
+        return name.toLowerCase().split(" ").join("-") + ".jpg";
+    }
 
     return (
-        
-        <div className="card mb-3">
-            <div className="row g-0">
-                <div className="col-md-4">
-                    <img src={image} className="img-fluid rounded-start" alt="..." />
+        props.elements &&
+        props.elements.results.map((element, i) => (
+            <div className="col-md-4" key={i}>
+                <div className="card my-3 border-light text-bg-dark">
+                    <img src={`img/${props.imgroute}/${getImg(element.name)}`} className="img-fluid rounded-start" alt="..." />
                 </div>
-                <div className="col-md-8">
-                    <div className="card-body">
-                        <h5 className="card-title">{name}</h5>
-                        <a href={url} className="btn btn-primary">Detail</a>
-                    </div>
+                <div className="card-body">
+                    <h3 className='card-title fs-5 text-center'>
+                        {element.name}
+                    </h3>
+                </div>
+                <div className="card-footer d-flex justify-content-around">
+                    <Link to={`${element.name.split(" ").join("").toLowerCase()}/${element.uid}`}>
+                        <button type="button" className="btn btn-warning">
+                            Detail
+                        </button>
+                    </Link>
                 </div>
             </div>
-        </div>
+        ))
     )
 }
 
